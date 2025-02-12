@@ -1,15 +1,6 @@
 
 import 'package:flutter/material.dart';
-
-class MyApp extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: CheckoutPage(),
-    );
-  }
-}
+import 'PaymentMethodScreen.dart';
 
 class CheckoutPage extends StatelessWidget {
 
@@ -17,23 +8,27 @@ class CheckoutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
+        leading: CircleAvatar(
+          child:  IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.black),
-        onPressed: () {},
+            onPressed: () {},
+          ),
+          backgroundColor: Colors.white,
         ),
         title: Text("Checkout", style: TextStyle(color: Colors.black)),
         centerTitle: true,
         actions: [
-          IconButton(
-              icon: Icon(Icons.more_horiz, color: Colors.black),
-            onPressed: () {},
-          ),
+         CircleAvatar(
+           child:  IconButton(
+             icon: Icon(Icons.more_horiz, color: Colors.black),
+             onPressed: () {},
+           ),
+           backgroundColor: Colors.white,
+         ),
         ],
       ),
       body: Padding(
-          padding: EdgeInsets.all(20.0),
+          padding: EdgeInsets.all(10.0),
           child: Column(
             children: [
               buildListTitle(Icons.location_on, "Shipping Address", "NewYork USA",true),
@@ -53,12 +48,16 @@ class CheckoutPage extends StatelessWidget {
               SizedBox(height: 20),
 
               ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => PaymentMethodScreen()),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25),
-                    ),
+                    // shape: RoundedRectangleBorder(
+                    //   borderRadius: BorderRadius.circular(25),
+                    // ),
                     minimumSize: Size(double.infinity, 50)
                   ),
                   child: Text("Place Order", style: TextStyle(color: Colors.white)))
@@ -73,7 +72,7 @@ class CheckoutPage extends StatelessWidget {
 
 Widget buildListTitle(IconData icon, String title, String subTitle, bool isArrow) {
   return ListTile(
-    leading: Icon(icon, color: Colors.black),
+    leading: CircleAvatar(child: Icon(icon, color: Colors.black),backgroundColor: Colors.white,),
     title: Text(title, style: TextStyle(fontWeight: FontWeight.bold)),
     subtitle: Text(subTitle),
     trailing: isArrow ? Icon(Icons.arrow_forward, size: 18) : null,
