@@ -1,4 +1,5 @@
 import 'package:first_proj/PaymentMethodScreen.dart';
+import 'package:first_proj/WeatherPage.dart';
 import 'package:flutter/material.dart';
 
 class Confirmation extends StatelessWidget {
@@ -32,13 +33,13 @@ class Confirmation extends StatelessWidget {
 
               ElevatedButton(onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => PaymentMethodScreen()));
+                    MaterialPageRoute(builder: (context) => Weatherpage()));
               },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black,
                     minimumSize: Size(double.infinity, 50)
                 ),
-                child: Text("Go Back Home",style: TextStyle(color: Colors.white)),)
+                child: Text("Weather Check",style: TextStyle(color: Colors.white)),)
             ],),
 
         ) ,
