@@ -22,11 +22,12 @@ class _WeatherPageState extends State<WeatherPage> {
   Future<void> fetchWeather(String cityName) async {
 
     final url = Uri.parse("https://api.openweathermap.org/data/2.5/weather?q=$cityName&appid=$apiKey&units=metric");
+   // one more time explanation
     final response = await get(url);
 
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
-      double temp = data["main"]["temp"];
+      double temp = data["main"]["temp"]; // Question????????????
       int tempInt = temp.toInt();
 
       setState(() {
