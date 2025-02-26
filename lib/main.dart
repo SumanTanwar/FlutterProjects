@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         ),
             scaffoldBackgroundColor: Colors.blueGrey
       ),
-      home: CheckoutPage(),
+      home: WeatherPage(),
     );
   }
 }
