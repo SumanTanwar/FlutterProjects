@@ -33,7 +33,7 @@ class Confirmation extends StatelessWidget {
 
               ElevatedButton(onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => WeatherPage()));
+                    MaterialPageRoute(builder: (context) => Weatherpage()));
               },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black,
